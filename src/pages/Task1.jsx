@@ -42,15 +42,15 @@ export default function Task1() {
             <div className="text-white font-semibold">{circle.color}</div>
     </div>
     
-            <div className="flex mt-5 mx-auto">
+            <div className="flex mt-5 gap-2 mx-auto">
             <button
-              className="bg-blue-500 text-white font-semibold py-2 px-2 rounded"
+              className="bg-blue-500 text-white text-sm font-semibold p-2 rounded"
               onClick={() => handleButtonClick(circle.id)}
             >
               Count+
             </button>
             <button
-              className="bg-red-500 text-white font-semibold py-2 px-2 rounded ml-4"
+              className="bg-red-500 text-white text-sm font-semibold p-2 rounded"
               onClick={() => handleDuplicateCircle(circle.id)}
             >
               Copy 
@@ -59,7 +59,7 @@ export default function Task1() {
     </div>))}
     </div>
 
-    <Link to={'/task2'} state={{length:circles.length}}>task2</Link>
+    <Link to={'/task2'} state={{length:circles.length}} className=' py-2 bg-blue-400 px-5 mt-10 rounded-lg text-white font-semibold'>Go for task2</Link>
     
    
   </div>
