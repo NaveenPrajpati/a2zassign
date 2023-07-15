@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Task1() {
 
     const [circles, setCircles] = useState([{ id: 1, count: 0, color: '#FFFF00' }]);
-
+const navigate=useNavigate()
   
     const handleButtonClick = (circleId) => {
       const updatedCircles = circles.map(circle => {
@@ -33,8 +33,14 @@ export default function Task1() {
     
 
   return (
+    <div>
+   <div className='flex justify-around'>
+      <p className='bg-teal-400 text-white p-2'>Welcome Assignment1 </p>
+      <p className='bg-teal-400 text-white p-2 cursor-pointer hover:bg-teal-300' onClick={()=>navigate('/login')}>Go For Assignment 2</p>
+    </div>
     <div className="flex flex-col items-center justify-center h-screen">
     <div className="flex gap-5 justify-center flex-wrap">
+    
         {circles.map(circle => (
     <div key={circle.id} className=' text-center w-fit'>
     <div style={{backgroundColor:circle.color}}  className='w-24 h-24  rounded-full m-2 flex flex-col justify-center items-center mx-auto'>
@@ -61,7 +67,7 @@ export default function Task1() {
 
     <Link to={'/task2'} state={{length:circles.length}} className=' py-2 bg-blue-400 px-5 mt-10 rounded-lg text-white font-semibold'>Go for task2</Link>
     
-   
+    </div>
   </div>
   )
 }

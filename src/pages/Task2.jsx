@@ -35,6 +35,7 @@ navigation('/task3')
 
   return (
     <div>
+    
       <div className='grid sm:grid-cols-3 grid-cols-1 mx-auto'>
         {arr.map((it, index) => (
           <div key={index} className='bg-slate-100 p-4 m-2 w-fit cursor-pointer hover:shadow-xl active:scale-105' onClick={()=>gottopage(it)}>
