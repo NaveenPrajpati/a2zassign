@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Mycontext } from '../App'
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const {userData}=useContext(Mycontext)
-  const[showcreateticket,setshowcreateticket]=useState(false) 
+  const[showcreateticket,setshowcreateticket]=useState(false)
+  const navigate=useNavigate() 
     const [formData, setFormData] = useState({
       leadSource: '',
       name: '',
@@ -18,8 +20,9 @@ export default function Home() {
       assistanceTime: '',
       comments: '',
     });
+   
 
-    const[vrn,setVrn]=useState('')
+  
 
     const handleChange = (event) => {
         const newValue = event.target.value.replace(/\s/g, "");
@@ -50,13 +53,21 @@ export default function Home() {
       setshowcreateticket(false)
     };
 
+     useEffect(()=>{
+     if(!userData?.user?.name){
+
+         navigate('/login')   
+        }
+     },[])
+
   return (
     <div>
     {!showcreateticket &&  <div>
 
    
-   <nav className='bg-slate-200'>
+   <nav className='bg-slate-200 flex '>
         <p className='p-2 bg-blue-500 text-white mx-auto cursor-pointer w-fit rounded-lg' onClick={()=>setshowcreateticket(true)}>create new ticket</p>
+        <p className='p-2 bg-blue-500 text-white mx-auto cursor-pointer w-fit rounded-lg' onClick={()=>navigate('/')}>go to assignment 1</p>
     </nav>
 
 <p className='text-center font-semibold mt-10'>{greeting} Rescuer! How are 

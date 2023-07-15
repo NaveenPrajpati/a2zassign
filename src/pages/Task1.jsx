@@ -36,7 +36,7 @@ const navigate=useNavigate()
     <div>
    <div className='flex justify-around'>
       <p className='bg-teal-400 text-white p-2'>Welcome Assignment1 </p>
-      <p className='bg-teal-400 text-white p-2 cursor-pointer hover:bg-teal-300' onClick={()=>navigate('/login')}>Go For Assignment 2</p>
+      <p className='bg-teal-400 text-white p-2 cursor-pointer hover:bg-teal-300' onClick={()=>navigate('/signup')}>Go For Assignment 2</p>
     </div>
     <div className="flex flex-col items-center justify-center h-screen">
     <div className="flex gap-5 justify-center flex-wrap">

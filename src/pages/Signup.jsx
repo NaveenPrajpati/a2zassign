@@ -79,7 +79,7 @@ function Signup() {
                         required
                         onChange={handleChange}
                         value={signupData.email}
-                        placeholder="add any fake email" />
+                        placeholder="enter any fake email" />
 
 
                    
